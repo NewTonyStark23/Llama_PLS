@@ -102,7 +102,7 @@ export function Hero() {
         </div>
 
         {/* Quick stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
           {[
             { label: 'Memory Usage', value: '-73%', desc: 'vs llama.cpp' },
             { label: 'First Token', value: '<5ms', desc: 'latency' },
@@ -115,6 +115,15 @@ export function Hero() {
               <div className="text-xs text-gray-600">{stat.desc}</div>
             </div>
           ))}
+        </div>
+
+        {/* Hero Image */}
+        <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-indigo-500/20">
+          <img 
+            src="https://image.qwenlm.ai/generated-images/fb2659fe-81d5-4153-b78f-d2dd49585b38/_result.png" 
+            alt="VeloxLLM Terminal Interface"
+            className="w-full h-auto"
+          />
         </div>
       </div>
     </section>

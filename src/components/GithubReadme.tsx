@@ -21,6 +21,15 @@ export function GithubReadme() {
           {/* README Content */}
           <div className="p-8 prose prose-invert max-w-none">
             <div className="space-y-8">
+              {/* Hero Image */}
+              <div className="rounded-xl overflow-hidden mb-6">
+                <img 
+                  src="https://image.qwenlm.ai/generated-images/377751fe-6410-4dd4-b5d6-4d303b7c7fd8/_result.png" 
+                  alt="VeloxLLM Hero Banner"
+                  className="w-full h-auto"
+                />
+              </div>
+
               {/* Title & Description */}
               <div>
                 <h1 className="text-3xl font-bold text-white mb-4">
@@ -30,6 +39,21 @@ export function GithubReadme() {
                   VeloxLLM is a ground-up rewrite of LLM inference from first principles, written in Rust with custom CUDA kernels, 
                   achieving <strong className="text-green-400">10x+ throughput</strong> over llama.cpp while using <strong className="text-cyan-400">73% less memory</strong>.
                 </p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  <span className="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs font-medium border border-yellow-500/30">MIT License</span>
+                  <span className="px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-xs font-medium border border-orange-500/30">Rust 1.70+</span>
+                  <span className="px-3 py-1 rounded-full bg-green-500/20 text-green-300 text-xs font-medium border border-green-500/30">CUDA 12.x</span>
+                  <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/30">Plug & Play</span>
+                </div>
+              </div>
+
+              {/* Terminal Screenshot */}
+              <div className="rounded-xl overflow-hidden border border-white/10">
+                <img 
+                  src="https://image.qwenlm.ai/generated-images/fb2659fe-81d5-4153-b78f-d2dd49585b38/_result.png" 
+                  alt="VeloxLLM Terminal Interface"
+                  className="w-full h-auto"
+                />
               </div>
 
               {/* Why is it faster section */}
@@ -399,6 +423,35 @@ export function GithubReadme() {
                 <p className="text-gray-300">
                   VeloxLLM is licensed under the <strong className="text-white">MIT License</strong>. 
                   The custom CUDA kernels are also MIT-licensed. You can use it commercially without restrictions.
+                </p>
+              </div>
+
+              {/* Benchmark Dashboard */}
+              <div className="border-t border-white/10 pt-8">
+                <h2 className="text-2xl font-bold text-white mb-4">📊 Performance Benchmarks</h2>
+                <div className="rounded-xl overflow-hidden border border-white/10 mb-6">
+                  <img 
+                    src="https://image.qwenlm.ai/generated-images/593d579a-f4a8-44a6-959e-08fc986eddda/_result.png" 
+                    alt="VeloxLLM Benchmark Dashboard"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* Architecture Diagram */}
+              <div className="border-t border-white/10 pt-8">
+                <h2 className="text-2xl font-bold text-white mb-4">🏗️ Architecture</h2>
+                <div className="rounded-xl overflow-hidden border border-white/10 mb-6">
+                  <img 
+                    src="https://image.qwenlm.ai/generated-images/51a225e7-8f44-4936-857c-aded0c2dd8d5/_result.png" 
+                    alt="VeloxLLM Architecture Diagram"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="text-gray-300 mb-4">
+                  VeloxLLM's fused kernel system eliminates the memory wall that bottlenecks llama.cpp. 
+                  Instead of launching 7+ separate GPU kernels per transformer layer, VeloxLLM fuses everything 
+                  into 2-3 persistent kernels that keep intermediate data in shared memory and registers.
                 </p>
               </div>
 

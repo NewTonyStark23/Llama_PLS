@@ -57,6 +57,17 @@ export function Benchmarks() {
           </p>
         </div>
 
+        {/* Benchmark Dashboard Image */}
+        <div className="glass-card rounded-2xl p-6 mb-8 glow-border">
+          <div className="rounded-xl overflow-hidden border border-white/10">
+            <img 
+              src="https://image.qwenlm.ai/generated-images/593d579a-f4a8-44a6-959e-08fc986eddda/_result.png" 
+              alt="VeloxLLM Benchmark Dashboard"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+
         {/* Throughput Benchmarks */}
         <div className="glass-card rounded-2xl p-8 mb-8">
           <h3 className="text-xl font-bold text-white mb-6">Generation Throughput (tokens/sec)</h3>

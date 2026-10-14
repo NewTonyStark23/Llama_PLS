@@ -13,8 +13,15 @@ export function Architecture() {
         </div>
 
         {/* Architecture Diagram */}
-        <div className="glass-card rounded-2xl p-8 mb-16 glow-border">
+        <div className="glass-card rounded-2xl p-8 mb-8 glow-border">
           <h3 className="text-xl font-bold text-white mb-6">System Architecture Overview</h3>
+          <div className="rounded-xl overflow-hidden border border-white/10 mb-6">
+            <img 
+              src="https://image.qwenlm.ai/generated-images/51a225e7-8f44-4936-857c-aded0c2dd8d5/_result.png" 
+              alt="VeloxLLM Architecture Diagram"
+              className="w-full h-auto"
+            />
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Input Layer */}
             <div className="space-y-4">
