@@ -71,13 +71,34 @@ export function Hero() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <a href="#readme" className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-semibold text-lg hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-indigo-500/25">
-            Quick Start Guide →
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <a href="#download" className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-semibold text-lg hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-indigo-500/25 flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download Now (Plug & Play)
           </a>
           <a href="#architecture" className="px-8 py-4 rounded-xl glass-card text-gray-300 font-semibold text-lg hover:text-white transition-all hover:border-indigo-500/50">
             View Architecture
           </a>
+        </div>
+
+        {/* Quick install command */}
+        <div className="mb-16 max-w-xl mx-auto">
+          <div className="code-block p-3 flex items-center gap-3 text-sm">
+            <span className="text-gray-500">$</span>
+            <code className="text-green-300 font-mono">curl -fsSL veloxllm.dev/install.sh | bash</code>
+            <button 
+              onClick={() => navigator.clipboard.writeText('curl -fsSL veloxllm.dev/install.sh | bash')}
+              className="ml-auto text-gray-500 hover:text-white transition-colors"
+              title="Copy to clipboard"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </button>
+          </div>
+          <p className="text-xs text-gray-600 mt-2 text-center">One-line install • Works on Linux, macOS, Windows (WSL)</p>
         </div>
 
         {/* Quick stats */}

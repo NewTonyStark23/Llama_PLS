@@ -6,6 +6,7 @@ interface NavigationProps {
 
 const navItems = [
   { id: 'hero', label: 'Home' },
+  { id: 'download', label: '⬇ Download' },
   { id: 'architecture', label: 'Architecture' },
   { id: 'benchmarks', label: 'Benchmarks' },
   { id: 'innovations', label: 'Innovations' },

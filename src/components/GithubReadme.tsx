@@ -288,21 +288,58 @@ export function GithubReadme() {
                 </p>
               </div>
 
+              {/* Download & Install */}
+              <div className="border-l-4 border-green-500 pl-6 py-2 bg-green-500/5 rounded-r-xl">
+                <h2 className="text-2xl font-bold text-white mb-4">📦 Download & Install (Plug & Play)</h2>
+                <p className="text-gray-300 mb-4">
+                  <strong className="text-green-300">No panel. No Docker. No complex setup.</strong> Just download, build, and run. 
+                  Works exactly like llama.cpp — point it at a GGUF model file and go.
+                </p>
+                <div className="code-block p-6 text-sm">
+                  <div className="text-gray-500 mb-2"># Option 1: One-line install (auto-installs Rust if needed)</div>
+                  <div className="text-green-300">curl -fsSL https://veloxllm.dev/install.sh | bash</div>
+                  <div className="text-gray-500 mt-4 mb-2"># Option 2: Download source and build</div>
+                  <div className="text-green-300">unzip veloxllm-v0.9.0.zip && cd veloxllm</div>
+                  <div className="text-green-300">chmod +x quickstart.sh && ./quickstart.sh</div>
+                  <div className="text-gray-500 mt-4 mb-2"># Option 3: Build manually (requires Rust)</div>
+                  <div className="text-green-300">cargo build --release</div>
+                  <div className="text-gray-500 mt-4 mb-2"># Then use it (exactly like llama.cpp):</div>
+                  <div className="text-green-300">./target/release/veloxllm run model.gguf --prompt "Hello!"</div>
+                  <div className="text-green-300">./target/release/veloxllm server model.gguf --port 8080</div>
+                </div>
+              </div>
+
+              {/* Point your AI at it */}
+              <div className="border-l-4 border-cyan-500 pl-6 py-2 bg-cyan-500/5 rounded-r-xl">
+                <h2 className="text-2xl font-bold text-white mb-4">🤖 Point Your AI at VeloxLLM</h2>
+                <p className="text-gray-300 mb-4">
+                  Once installed, VeloxLLM exposes an <strong className="text-cyan-300">OpenAI-compatible API</strong>. 
+                  Point any AI tool, agent, or framework at it:
+                </p>
+                <div className="code-block p-6 text-sm">
+                  <div className="text-gray-500 mb-2"># Start the server</div>
+                  <div className="text-green-300">./target/release/veloxllm server model.gguf --port 8080</div>
+                  <div className="text-gray-500 mt-4 mb-2"># Then point your AI at http://localhost:8080/v1</div>
+                  <div className="text-gray-500"># Works with: OpenAI SDK, LangChain, AutoGen, CrewAI, etc.</div>
+                  <div className="text-gray-500 mt-2 mb-2"># Example with curl:</div>
+                  <div className="text-green-300">curl http://localhost:8080/v1/chat/completions \</div>
+                  <div className="text-green-300">&nbsp;&nbsp;-H "Content-Type: application/json" \</div>
+                  <div className="text-green-300">&nbsp;&nbsp;-d {'\'{"messages": [{"role": "user", "content": "Hello!"}]}\''}</div>
+                </div>
+              </div>
+
               {/* Quick Start */}
               <div className="border-t border-white/10 pt-8">
-                <h2 className="text-2xl font-bold text-white mb-4">🏁 Quick Start</h2>
+                <h2 className="text-2xl font-bold text-white mb-4">🏁 All Commands</h2>
                 <div className="code-block p-6 text-sm">
-                  <div className="text-gray-500 mb-2"># Install from cargo (Rust)</div>
-                  <div className="text-green-300">cargo install veloxllm</div>
-                  <div className="text-gray-500 mt-4 mb-2"># Or build from source</div>
-                  <div className="text-green-300">git clone https://github.com/veloxllm/veloxllm.git</div>
-                  <div className="text-green-300">cd veloxllm && cargo build --release --features cuda</div>
-                  <div className="text-gray-500 mt-4 mb-2"># Run inference (auto-detects hardware)</div>
-                  <div className="text-green-300">veloxllm run ./models/llama-3.1-8b.gguf --prompt "Hello!"</div>
-                  <div className="text-gray-500 mt-4 mb-2"># Start API server (OpenAI-compatible)</div>
-                  <div className="text-green-300">veloxllm serve ./models/llama-3.1-70b.gguf --port 8080</div>
-                  <div className="text-gray-500 mt-4 mb-2"># Browser inference (WebGPU)</div>
-                  <div className="text-green-300">veloxllm web ./models/llama-3.1-8b.velox --output ./dist</div>
+                  <div className="text-gray-500 mb-2"># Run inference (like llama.cpp's main)</div>
+                  <div className="text-green-300">veloxllm run model.gguf --prompt "Hello!" --max-tokens 256</div>
+                  <div className="text-gray-500 mt-4 mb-2"># Start OpenAI-compatible API server</div>
+                  <div className="text-green-300">veloxllm server model.gguf --port 8080</div>
+                  <div className="text-gray-500 mt-4 mb-2"># Run benchmarks</div>
+                  <div className="text-green-300">veloxllm bench model.gguf --iterations 10</div>
+                  <div className="text-gray-500 mt-4 mb-2"># Convert to optimized Velox format</div>
+                  <div className="text-green-300">veloxllm convert model.gguf --output model.velox --quantization q4_k_m</div>
                 </div>
               </div>
 

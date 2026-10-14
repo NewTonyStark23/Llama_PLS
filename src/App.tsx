@@ -7,6 +7,7 @@ import { CodeExamples } from './components/CodeExamples';
 import { GithubReadme } from './components/GithubReadme';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
+import { DownloadSection } from './components/DownloadSection';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -34,6 +35,9 @@ function App() {
       <Navigation activeSection={activeSection} />
       <main>
         <Hero />
+        <section id="download" className="py-16 px-4 sm:px-6 lg:px-8">
+          <DownloadSection />
+        </section>
         <Architecture />
         <Benchmarks />
         <Innovations />
